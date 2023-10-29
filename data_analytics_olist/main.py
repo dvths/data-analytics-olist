@@ -5,9 +5,12 @@ __all__ = ['main']
 
 # %% ../nbs/00_main.ipynb 3
 import os
+from dotenv import load_dotenv
 from sqlalchemy import create_engine 
 from .olist_data_extractor import OlistDataExtractor
 from .olist_data_loader import OlistDataLoader
+
+load_dotenv()
 
 # %% ../nbs/00_main.ipynb 4
 def main():
@@ -16,7 +19,7 @@ def main():
     DATA_DIR = os.path.join(BASE_DIR, "data")
     DATA_RAW = os.path.join(DATA_DIR, "raw")
     ZIP_FILE = "olist_data.zip"
-    CONNECTION_STRING = "postgresql://root:root@localhost/tutorial_olist"
+    CONNECTION_STRING = os.environ.get("CONNECTION_STRING")
     DB = create_engine(CONNECTION_STRING)
     
     

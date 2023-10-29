@@ -33,5 +33,26 @@
     "title": "Upload Data",
     "section": "",
     "text": "source\n\nfoo\n\n foo ()"
+  },
+  {
+    "objectID": "01_olist_data_extractor-Copy1.html",
+    "href": "01_olist_data_extractor-Copy1.html",
+    "title": "olist_data_extractor",
+    "section": "",
+    "text": "source\n\nOlistDataExtractor\n\n OlistDataExtractor (zip_file, data_dir, output_path)\n\nExtrai os arquivos de dados compactados para o diretório de arquivos brutos"
+  },
+  {
+    "objectID": "00_main.html",
+    "href": "00_main.html",
+    "title": "main",
+    "section": "",
+    "text": "source\n\nmain\n\n main ()"
+  },
+  {
+    "objectID": "02_olist_data_loader.html",
+    "href": "02_olist_data_loader.html",
+    "title": "olist_data_loader",
+    "section": "",
+    "text": "source\n\nOlistDataLoader\n\n OlistDataLoader (datasets_path, database_engine)\n\nCarrega os datasets para um banco de dados Postgres e formata o nome das tabelas para o padrão tb_nome_da_tabela"
   }
 ]

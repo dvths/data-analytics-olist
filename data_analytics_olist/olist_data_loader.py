@@ -5,20 +5,21 @@ __all__ = ['OlistDataLoader']
 
 # %% ../nbs/02_olist_data_loader.ipynb 3
 import os
+
 import pandas as pd
 from sqlalchemy import create_engine
 
 # %% ../nbs/02_olist_data_loader.ipynb 4
 class OlistDataLoader:
     """Carrega os datasets para um banco de dados Postgres e formata o nome das tabelas para o padrão tb_nome_da_tabela"""
-    
+
     def __init__(self, datasets_path, database_engine):
         self.datasets_path = datasets_path
         self.database_engine = database_engine
 
     def load_data(self):
         """Itera pelo diretório de arquivos brutos e carrega os datasets para banco de dados Postgres"""
-        
+
         for csv_file in os.listdir(self.datasets_path):
             df_temp = pd.read_csv(os.path.join(self.datasets_path, csv_file))
             table_names = "tb_" + csv_file.strip(".csv").replace("olist_", "").replace(
@@ -27,4 +28,3 @@ class OlistDataLoader:
             df_temp.to_sql(
                 table_names, con=self.database_engine, if_exists="replace", index=False
             )
-
